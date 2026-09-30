@@ -295,7 +295,7 @@ export const MapComponent: React.FC<MapComponentProps> = ({
             🌊 ${flood.name}<br/>
             <span class="text-slate-200">Głębokość maks: ${flood.depthMaxM}m • Przyrost: ${flood.waterLevelDelta}</span>
            </div>`,
-          { sticky: true }
+          { sticky: true, className: 'nurt-map-tooltip' }
         );
       });
     }
@@ -344,11 +344,11 @@ export const MapComponent: React.FC<MapComponentProps> = ({
               <strong class="text-rose-400">[NIEPRZEJEZDNA] ${road.name}</strong><br/>
               <span class="text-slate-300">Woda: ${road.waterDepthCm || 0} cm • ${road.description.slice(0, 50)}...</span>
              </div>`,
-            { sticky: true }
+            { sticky: true, className: 'nurt-map-tooltip' }
           );
 
           // Stała etykieta dla kluczowej magistrali DW-878
-          if (isDW878) {
+          if (isDW878 && selectedItem?.kind !== 'ALERT') {
             const midCoord = road.coordinates[Math.floor(road.coordinates.length / 2)];
             const dwLabelIcon = L.divIcon({
               html: `
@@ -377,7 +377,7 @@ export const MapComponent: React.FC<MapComponentProps> = ({
             `<div class="p-1 font-mono text-[10px]">
               <strong class="text-amber-400">[ZAGROŻONA] ${road.name}</strong>
              </div>`,
-            { sticky: true }
+            { sticky: true, className: 'nurt-map-tooltip' }
           );
         } else {
           // Przejezdna - cienka neutralna/zielonkawa
@@ -395,7 +395,7 @@ export const MapComponent: React.FC<MapComponentProps> = ({
             `<div class="p-1 font-mono text-[10px] text-emerald-300">
               <strong>[PRZEJEZDNA] ${road.name}</strong>
              </div>`,
-            { sticky: true }
+            { sticky: true, className: 'nurt-map-tooltip' }
           );
         }
       });
@@ -428,7 +428,7 @@ export const MapComponent: React.FC<MapComponentProps> = ({
             <div class="font-bold text-white">${bld.address}</div>
             <div class="text-slate-300">Status: <span style="color:${color}">${bld.status}</span> • Mieszkańcy: ${bld.residentsReported}</div>
            </div>`,
-          { sticky: true }
+          { sticky: true, className: 'nurt-map-tooltip' }
         );
       });
     }
@@ -466,7 +466,7 @@ export const MapComponent: React.FC<MapComponentProps> = ({
             <div class="font-bold text-cyan-300">WYKRYCIE: ${det.title}</div>
             <div class="text-slate-300">Pewność: ${det.confidence}% • Czas: ${det.detectedAt}</div>
            </div>`,
-          { sticky: true }
+          { sticky: true, className: 'nurt-map-tooltip' }
         );
       });
     }
@@ -543,6 +543,7 @@ export const MapComponent: React.FC<MapComponentProps> = ({
     }
 
     // Dron: wyraźny marker ze zorientowaną sylwetką i stałą etykietą
+    const isAlertFocus = selectedItem?.kind === 'ALERT';
     const droneHtml = `
       <div class="relative flex items-center justify-center w-8 h-8 select-none pointer-events-auto cursor-pointer">
         <div class="w-7 h-7 rounded-full bg-slate-950 border-2 border-cyan-400 flex items-center justify-center shadow-[0_2px_10px_rgba(0,0,0,0.8)]" style="transform: rotate(${drone.heading}deg)">
@@ -550,9 +551,7 @@ export const MapComponent: React.FC<MapComponentProps> = ({
             <path d="M12 2L15 9L22 12L15 15L12 22L9 15L2 12L9 9L12 2Z"/>
           </svg>
         </div>
-        <div class="absolute -bottom-4 left-1/2 -translate-x-1/2 px-1 py-0.2 rounded bg-slate-950 border border-cyan-400 text-[8px] font-mono font-bold text-cyan-300 whitespace-nowrap shadow-md">
-          ${drone.callsign} (${drone.altitude}m)
-        </div>
+        ${isAlertFocus ? '' : `<div class="absolute -bottom-4 left-1/2 -translate-x-1/2 px-1 py-0.2 rounded bg-slate-950 border border-cyan-400 text-[8px] font-mono font-bold text-cyan-300 whitespace-nowrap shadow-md">${drone.callsign} (${drone.altitude}m)</div>`}
       </div>
     `;
 
@@ -569,7 +568,7 @@ export const MapComponent: React.FC<MapComponentProps> = ({
         <div class="text-cyan-400 font-bold">${drone.callsign} • PATROL RECON</div>
         <div class="text-slate-300">Wysokość: ${drone.altitude}m | Prędkość: ${drone.speed} km/h</div>
        </div>`,
-      { sticky: true }
+      { sticky: true, className: 'nurt-map-tooltip' }
     );
 
     // 7. ZNACZNIKI ALERTÓW (Kontrastowe, czytelne na ulicach i ortofoto)
@@ -587,7 +586,6 @@ export const MapComponent: React.FC<MapComponentProps> = ({
           <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 px-1 py-0.2 rounded bg-slate-950 border ${isSelected ? 'border-cyan-400 text-cyan-200 font-extrabold shadow-[0_0_8px_rgba(6,182,212,0.5)]' : isCritical ? 'border-rose-500 text-rose-300' : 'border-amber-500 text-amber-300'} text-[8px] font-mono whitespace-nowrap shadow-md">
             ${alert.id}
           </div>
-          ${isSelected ? '<div class="absolute -bottom-3.5 left-1/2 -translate-x-1/2 px-1 rounded bg-cyan-950/95 border border-cyan-400 text-[7px] font-mono font-bold text-cyan-300 tracking-wider whitespace-nowrap shadow">AKTYWNY</div>' : ''}
         </div>
       `;
 
@@ -609,53 +607,52 @@ export const MapComponent: React.FC<MapComponentProps> = ({
           <div class="text-slate-300">Wskaźnik priorytetu: ${alert.priorityScore}/100</div>
           <div class="text-cyan-300 text-[9px] mt-0.5">Lokalizacja: ${alert.location}</div>
          </div>`,
-        { sticky: true }
+        { sticky: true, className: 'nurt-map-tooltip' }
       );
     });
 
     // 8. CEL PO RE-TASK (TARGET + cienka linia do celu)
-    if (retaskTarget) {
+    const retaskMatchesSelectedAlert = Boolean(
+      retaskTarget && selectedItem?.kind === 'ALERT' && selectedItem.data.id === retaskTarget.alertId
+    );
+
+    if (retaskTarget && !retaskMatchesSelectedAlert) {
       const targetHtml = `
-        <div class="relative flex items-center justify-center w-10 h-10 select-none pointer-events-none">
-          <div class="absolute -inset-1 rounded-full border-2 border-amber-400 shadow-[0_0_16px_rgba(251,191,36,0.95)]"></div>
-          <div class="absolute w-7 h-7 rounded-full border border-amber-400/60 bg-amber-500/25"></div>
-          <div class="w-6 h-6 rounded-full bg-slate-950 border-2 border-amber-400 flex items-center justify-center text-[10px] font-bold text-amber-300 shadow-md">
-            🎯
-          </div>
-          <div class="absolute -top-4.5 left-1/2 -translate-x-1/2 px-1.5 py-0.2 rounded bg-slate-950 border border-amber-400 text-[8px] font-mono font-bold text-amber-200 tracking-wide whitespace-nowrap shadow-lg">
-            TARGET: SENSOR LOCK
-          </div>
+        <div class="relative flex items-center justify-center w-8 h-8 select-none pointer-events-none">
+          <div class="absolute w-7 h-7 rounded-full border border-amber-300/70 bg-amber-500/10"></div>
+          <div class="w-3 h-3 rotate-45 bg-amber-400 border-2 border-slate-950 shadow-[0_0_8px_rgba(251,191,36,0.75)]"></div>
         </div>
       `;
 
       const targetIcon = L.divIcon({
         html: targetHtml,
         className: 'custom-retask-marker',
-        iconSize: [40, 40],
-        iconAnchor: [20, 20],
+        iconSize: [32, 32],
+        iconAnchor: [16, 16],
       });
 
       L.marker(retaskTarget.coords, { icon: targetIcon }).addTo(group);
+    }
 
-      // Cienka, precyzyjna linia od aktualnej pozycji drona do celu
+    if (retaskTarget) {
+      // Dyskretna linia pokazuje relację dron–cel bez zasłaniania alertu.
       L.polyline([droneCoords, retaskTarget.coords], {
         color: '#f59e0b',
-        weight: 1.5,
+        weight: 1.25,
         dashArray: '4, 4',
-        opacity: 0.9,
+        opacity: 0.65,
+        interactive: false,
       }).addTo(group);
     }
 
     // 9. SUBTELNY CELOWNIK SELEKCJI
-    if (selectedItem) {
+    if (selectedItem && selectedItem.kind !== 'ALERT') {
       let selCoords: [number, number] | null = null;
       if (selectedItem.kind === 'ROAD') {
         selCoords = selectedItem.data.coordinates[Math.floor(selectedItem.data.coordinates.length / 2)] || selectedItem.data.coordinates[0];
       } else if (selectedItem.kind === 'BUILDING') {
         selCoords = selectedItem.data.coordinates;
       } else if (selectedItem.kind === 'DETECTION') {
-        selCoords = selectedItem.data.coordinates;
-      } else if (selectedItem.kind === 'ALERT') {
         selCoords = selectedItem.data.coordinates;
       } else if (selectedItem.kind === 'FLOOD') {
         selCoords = selectedItem.data.coordinates[0];

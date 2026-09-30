@@ -220,7 +220,7 @@ export function App() {
     setSelectedMapItem({ kind: 'ALERT', data: alert });
     setFocusTarget({
       coords: alert.coordinates,
-      zoom: 16,
+      zoom: 15.2,
       id: alert.id,
       timestamp: Date.now(),
     });

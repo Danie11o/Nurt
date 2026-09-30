@@ -1,5 +1,20 @@
 @import "tailwindcss";
 
+.leaflet-tooltip.nurt-map-tooltip {
+  max-width: 280px;
+  padding: 7px 9px;
+  border: 1px solid rgb(51 65 85 / 0.9);
+  border-radius: 7px;
+  background: rgb(2 6 23 / 0.94);
+  color: #e2e8f0;
+  box-shadow: 0 8px 24px rgb(0 0 0 / 0.38);
+  white-space: normal;
+}
+
+.leaflet-tooltip.nurt-map-tooltip::before {
+  border-top-color: rgb(2 6 23 / 0.94);
+}
+
 @layer base {
   :root {
     --font-mono: 'JetBrains Mono', monospace;

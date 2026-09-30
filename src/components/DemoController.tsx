@@ -18,7 +18,6 @@ export interface DemoStepInfo {
   title: string;
   badge: string;
   description: string;
-  speakerCue: string;
   icon: React.ReactNode;
 }
 
@@ -29,7 +28,6 @@ export const DEMO_STEPS: DemoStepInfo[] = [
     title: 'Potrzeba operacyjna sztabu',
     badge: 'KROK 1/8 • POTRZEBA',
     description: 'Dyżurny musi sprawdzić, czy jedyna droga do odciętej zabudowy pozostaje przejezdna.',
-    speakerCue: '„Nie zaczynamy od drona. Zaczynamy od pytania dyżurnego: czy ratownicy dojadą do mieszkańców?”',
     icon: <Eye className="w-4 h-4 text-blue-400" />,
   },
   {
@@ -38,7 +36,6 @@ export const DEMO_STEPS: DemoStepInfo[] = [
     title: 'Zadanie rozpoznania dla operatora',
     badge: 'KROK 2/8 • LOT-01',
     description: 'Operator otrzymuje punkt, pytanie operacyjne i zakres obserwacji. Dron zbiera świeży obraz trudno dostępnego odcinka.',
-    speakerCue: '„Dron ma tu główną rolę: dostarcza aktualny obraz miejsca, do którego patrol nie może szybko dotrzeć.”',
     icon: <Radio className="w-4 h-4 text-cyan-400 animate-pulse" />,
   },
   {
@@ -47,7 +44,6 @@ export const DEMO_STEPS: DemoStepInfo[] = [
     title: 'Import obserwacji z lotu',
     badge: 'KROK 3/8 • DANE Z DRONA',
     description: 'Pakiet demonstracyjny zachowuje identyfikator lotu, czas, lokalizację i ocenę pewności operatora.',
-    speakerCue: '„Każdy kadr pozostaje połączony ze źródłem, czasem i miejscem. Jury widzi, skąd pochodzi informacja.”',
     icon: <UploadCloud className="w-4 h-4 text-emerald-400 animate-bounce" />,
   },
   {
@@ -56,7 +52,6 @@ export const DEMO_STEPS: DemoStepInfo[] = [
     title: 'Obserwacja staje się kartą sprawy',
     badge: 'KROK 4/8 • PORZĄDKOWANIE',
     description: 'System porównuje loty i porządkuje obserwację. W demo analiza jest deterministyczną symulacją, a nie działającym modelem AI.',
-    speakerCue: '„Nie udajemy gotowego AI. Pokazujemy bezpieczny przepływ, do którego później można podłączyć zweryfikowany model.”',
     icon: <Cpu className="w-4 h-4 text-amber-400 animate-spin" />,
   },
   {
@@ -65,7 +60,6 @@ export const DEMO_STEPS: DemoStepInfo[] = [
     title: 'Zmiana od poprzedniego lotu',
     badge: 'KROK 5/8 • PORÓWNANIE',
     description: 'Warstwa zalewowa aktualizuje się o +18%. Droga DW-878 staje się nieprzejezdna, Most Karpacki zagrożony.',
-    speakerCue: '„Mapa operacyjna natychmiast ujawnia dynamikę: widzimy rozlanie wody i odcięcie kluczowych szlaków dojazdowych.”',
     icon: <AlertTriangle className="w-4 h-4 text-amber-500" />,
   },
   {
@@ -74,7 +68,6 @@ export const DEMO_STEPS: DemoStepInfo[] = [
     title: 'Priorytet z uzasadnieniem',
     badge: 'KROK 6/8 • PRIORYTET',
     description: 'Jawny scoring porządkuje sprawy według zagrożenia życia, przejezdności, infrastruktury i jakości obserwacji.',
-    speakerCue: '„To nie czarna skrzynka. Dyżurny widzi wynik, dowody i składniki punktacji.”',
     icon: <ShieldAlert className="w-4 h-4 text-orange-400" />,
   },
   {
@@ -83,7 +76,6 @@ export const DEMO_STEPS: DemoStepInfo[] = [
     title: 'Decyzja człowieka',
     badge: 'KROK 7/8 • HUMAN-IN-THE-LOOP',
     description: 'Dyżurny zatwierdza blokadę drogi, przypisuje sprawę zespołowi i zleca ponowny lot. System nie wysyła rozkazu samodzielnie.',
-    speakerCue: '„System rekomenduje następny krok, ale odpowiedzialność pozostaje po stronie człowieka.”',
     icon: <AlertTriangle className="w-4 h-4 text-rose-500 animate-pulse" />,
   },
   {
@@ -92,7 +84,6 @@ export const DEMO_STEPS: DemoStepInfo[] = [
     title: 'LOT-02 zamyka pętlę',
     badge: 'KROK 8/8 • ZWERYFIKOWANO',
     description: 'Ponowny lot o 12:45 potwierdza utrzymywanie się wody. Sprawa dostaje nowy czas, źródło i status do dalszego działania.',
-    speakerCue: '„Innowacją jest dalszy ciąg sprawy: drugi lot potwierdza stan i chroni sztab przed decyzją na podstawie starego obrazu.”',
     icon: <CheckCircle2 className="w-4 h-4 text-emerald-400" />,
   },
 ];
@@ -154,14 +145,6 @@ export const DemoController: React.FC<DemoControllerProps> = ({
               {currentStep.title}
             </h2>
           </div>
-        </div>
-
-        {/* Środek: Wskazówka narracyjna dla prezentera / jury */}
-        <div className="hidden xl:flex items-center gap-2 max-w-xl px-3 py-1 rounded bg-slate-900/90 border border-slate-700/80 text-xs text-amber-200/90 italic">
-          <span className="font-bold text-[10px] not-italic text-amber-400 uppercase font-mono px-1 rounded bg-amber-950/60 border border-amber-600/30">
-            PITCH CUE
-          </span>
-          <span className="truncate">{currentStep.speakerCue}</span>
         </div>
 
         {/* Prawa strona: Przyciski sterowania ręcznego */}

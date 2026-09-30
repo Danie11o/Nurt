@@ -60,97 +60,92 @@ function notes(text){page.notes=text;page.slide.speakerNotes.textFrame.setText(t
 start(C.navy);
 tx('NURT C2',60,48,650,122,88,C.paper,true);
 tx('Od obrazu z drona\ndo decyzji w powodzi',64,193,750,155,52,C.paper,true);
-tx('LOT-01 daje decyzję.\nLOT-02 potwierdza jej aktualność.',66,394,650,96,30,C.light);
+tx('Dron dostarcza aktualny obraz.\nNURT prowadzi go do decyzji i weryfikacji.',66,394,700,96,28,C.light);
 tx('Uszatki',66,592,670,42,28,C.teal,true);
 await img('nurt-case.png',832,58,388,574,{fit:'cover',crop:{left:0.42,top:0.04,right:0,bottom:0.04}});
 footer(1,true,'Prototyp demonstracyjny. Scenariusz i dane symulowane.');
 notes('Podczas powodzi problemem nie jest tylko brak obrazu. Sztab musi ustalić, który obraz wymaga działania teraz. NURT pomaga dyżurnemu uporządkować obserwacje z drona i zachować ich dalszy ciąg aż do ponownego sprawdzenia. Pokazujemy prototyp na całkowicie syntetycznym scenariuszu. Zrzut pochodzi z aplikacji dostarczonej w repozytorium.\nŹródło koncepcji: BRZEG-Dual-Use-Hackathon-brief.md, sekcje „Rekomendowany projekt” i „Użytkownik i scenariusz demonstracyjny”.');
 
 start();
-tx('Droga może być zalana.\nDyżurny musi wiedzieć, co dalej.',64,48,1148,150,50,C.navy,true);
-tx('„Czy dojedziemy\ndo odciętej\nzabudowy?”',64,274,580,245,55,C.navy,true);
-tx('SYTUACJA DEMONSTRACYJNA',755,254,450,30,18,C.muted,true);
-tx('Sygnał ze zgłoszenia',755,316,450,44,31,C.navy,true);
-tx('Droga wymaga sprawdzenia.\nInformacja pozostaje niepewna.',755,366,450,83,25,C.muted);
-tx('Dyżurny gminnego sztabu',755,487,450,44,29,C.navy,true);
-tx('Wybiera odcinek do rozpoznania\ni potrzebuje aktualnego obrazu.',755,535,450,82,25,C.muted);
-footer(2);
-notes('Bohaterem jest dyżurny gminnego sztabu. Po intensywnych opadach otrzymuje sygnał, że odcinek drogi może być nieprzejezdny i część zabudowy może być odcięta. To realistyczny, ale fikcyjny przypadek. Dyżurny nie potrzebuje kolejnego złożonego panelu GIS. Musi wiedzieć, gdzie skierować rozpoznanie i co zrobić z jego wynikiem. Dokładny obszar zespół dostosuje do zadania wydarzenia.\nŹródło: brief, „Użytkownik i scenariusz demonstracyjny”.');
+tx('Problem operacyjny',64,48,1148,80,52,C.navy,true);
+tx('„Czy ratownicy nadal\ndojadą do mieszkańców?”',64,205,575,170,48,C.navy,true);
+tx('Dron może szybko sprawdzić teren.\nSam obraz nie wystarcza jednak\ndo bezpiecznej decyzji.',64,410,555,128,28,C.muted);
+line(682,180,682,595,C.line,2);
+tx('Obraz bez kontekstu',742,190,470,43,31,C.navy,true);
+tx('Brakuje jednoznacznego czasu,\nmiejsca i źródła obserwacji.',742,239,470,62,23,C.muted);
+tx('Decyzja bez zapisu',742,335,470,43,31,C.navy,true);
+tx('Nie wiadomo, kto zatwierdził działanie\ni na jakiej podstawie.',742,384,470,62,23,C.muted);
+tx('Brak ponownego sprawdzenia',742,480,470,43,31,C.navy,true);
+tx('Sztab może pracować na obrazie,\nktóry stracił aktualność.',742,529,470,62,23,C.muted);
+footer(2,false,'Problem: aktualny obraz z drona nie ma dalszego ciągu w procesie decyzyjnym.');
+notes('Problem nie polega na braku kamer. Dron szybko dociera nad trudno dostępne miejsce, ale pojedynczy kadr nie odpowiada jeszcze na pytanie operacyjne. Sztab potrzebuje informacji o czasie, miejscu i źródle. Musi zapisać decyzję i sprawdzić, czy po kilkunastu minutach nadal jest aktualna. Scenariusz i dane w demonstracji są syntetyczne.');
 
 start(C.navy);
-tx('Sam podgląd nie daje decyzji',64,48,1152,80,52,C.paper,true);
-tx('Obraz z drona\nZgłoszenie\nMapa terenu',64,224,600,248,51,C.light);
-line(688,204,688,590,'#365057',2);
-const questions=[['Gdzie?','Dokładna lokalizacja'],['Kiedy?','Czas obserwacji'],['Z jaką pewnością?','Potwierdzenie albo weryfikacja'],['Co teraz?','Sprawa do decyzji dyżurnego']];
-questions.forEach((q,i)=>{tx(q[0],757,203+i*99,451,41,29,C.teal,true);tx(q[1],757,248+i*99,451,35,22,C.light);});
-footer(3,true,'NURT uzupełnia mapę i obraz o uporządkowany zapis sprawy.');
-notes('Nagranie ma wartość operacyjną, gdy właściwa osoba dostaje aktualną i zrozumiałą informację. NURT uzupełnia dotychczasowe narzędzia, porządkując odpowiedzi na cztery pytania: gdzie, kiedy, z jaką pewnością i co dalej. Nie twierdzimy, że istniejące systemy tego nie potrafią. Nasz prototyp koncentruje się na niewielkim przepływie możliwym do pokazania i sprawdzenia z dyżurnym.\nŹródło: brief, „Innowacja do wyeksponowania”.');
-
-start();
-tx('Misja zaczyna się od potrzeby sztabu',64,48,1152,88,49,C.navy,true);
-tx('Dron dostarcza świeżą obserwację trudno dostępnego miejsca.',64,153,1152,50,29,C.muted);
-const n1=node('Potrzeba\nsztabu',64,267,245,108);
-const n2=node('Zadanie lotu\ndla operatora',366,267,245,108);
-const n3=node('Dron: obraz\ni lokalizacja',668,267,245,108,{fill:C.teal,border:C.teal});
-const n4=node('Obserwacja',970,267,245,108);
-const n5=node('Karta\ndziałania',970,466,245,108);
-const n6=node('Decyzja\ndyżurnego',668,466,245,108,{fill:C.navy,color:C.paper,border:C.navy});
-const n7=node('Ponowne\npotwierdzenie',366,466,245,108);
-arrow(n1,n2);arrow(n2,n3);arrow(n3,n4);arrow(n4,n5,'bottom','top');arrow(n5,n6,'left','right');arrow(n6,n7,'left','right');
-tx('Operator odpowiada za lot.\nCzłowiek zatwierdza działanie.',64,478,270,89,22,C.muted);
-footer(4);
-notes('Sztab zgłasza potrzebę. Uprawniony operator przygotowuje misję i wykonuje lot zgodnie z właściwymi procedurami. Dron dostarcza obraz z lokalizacją. Człowiek opisuje obserwację, a NURT pokazuje kartę. Dyżurny zatwierdza następny krok. Sprawdzenie w terenie albo ponowny lot zamyka obieg. Bez drona brakuje aktualnego rozpoznania trudno dostępnego miejsca. W demonstracji importujemy przygotowany scenariusz. Nie sterujemy sprzętem i nie wysyłamy rozkazów służbom.\nŹródło: brief, „Pętla dronowa”, „Innowacja do wyeksponowania”.');
+tx('Rozwiązanie NURT C2',64,48,1152,80,52,C.paper,true);
+tx('Dron dostarcza\nświeżą obserwację',64,187,520,94,36,C.paper,true);
+tx('LOT-01 sprawdza wskazany odcinek.\nPrzekazuje obraz z czasem\ni lokalizacją.',64,300,520,105,25,C.light);
+line(632,172,632,595,'#365057',2);
+const solutions=[['NURT dodaje kontekst','Łączy materiał z lotem, miejscem,\nczasem i oceną pewności.'],['NURT tworzy sprawę','Pokazuje dowód, zmianę,\npriorytet i status.'],['Człowiek zatwierdza działanie','Dyżurny podejmuje decyzję.\nLOT-02 ponownie sprawdza sytuację.']];
+solutions.forEach((q,i)=>{tx(q[0],700,175+i*135,500,42,29,C.teal,true);tx(q[1],700,224+i*135,500,72,22,C.light);});
+tx('Efekt\nObraz z drona staje się\nudokumentowaną i aktualizowaną\nsprawą operacyjną.',64,475,520,132,28,C.teal,true);
+footer(3,true,'Dron obserwuje. NURT porządkuje. Człowiek decyduje. LOT-02 weryfikuje.');
+notes('NURT nie zastępuje operatora drona ani dyżurnego. Dron pełni rolę dynamicznego sensora. NURT porządkuje obserwację w kartę sprawy i zachowuje jej historię. Człowiek zatwierdza następny krok. Drugi lot aktualizuje status, dzięki czemu sztab nie opiera się wyłącznie na starym obrazie.');
 
 start(C.navy);
-tx('Zobacz NURT C2 w 60 sekund',64,33,1152,70,49,C.paper,true);
-tx('Działające demo. Jawny priorytet, decyzja człowieka i LOT-02.',64,112,1152,35,22,C.light);
-await img('nurt-overview.png',62,171,1156,442,{fit:'contain'});
+await img('nurt-c2-jak-dziala.png',28,22,1224,688,{fit:'contain'});
+footer(4,true,'Pełna pętla: potrzeba sztabu, LOT-01, decyzja człowieka i weryfikacja LOT-02.');
+notes('Proces zaczyna pytanie sztabu. Operator wykonuje LOT-01, a dron dostarcza aktualny obraz z lokalizacją. NURT tworzy kartę sprawy z dowodem, zmianą i priorytetem. Dyżurny zatwierdza działanie. LOT-02 ponownie obserwuje ten sam odcinek i aktualizuje status. Demo nie steruje dronem ani nie wysyła poleceń do służb.');
+
+start(C.navy);
+tx('Demo prowadzi sprawę przez 8 kroków',64,33,1152,70,48,C.paper,true);
+tx('Od zadania dla drona, przez decyzję dyżurnego, do ponownej obserwacji LOT-02.',64,112,1152,35,22,C.light);
+await img('nurt-current-demo.png',62,171,1156,442,{fit:'contain'});
 footer(5,true,'Zrzut działającego prototypu. Mapa i obserwacje są syntetyczne.');
-notes('POKAZ 60 SEKUND. 0–10 s: wybierz OBS-01 „Woda na dojeździe do mostu”, Most Zachodni, sektor B2. Powiedz, że dane i obszar są syntetyczne. 10–25 s: wskaż źródło, czas i pewność. Potwierdzona obserwacja wody nie jest potwierdzeniem bezpieczeństwa drogi. 25–40 s: wpisz decyzję i kliknij „Zapisz decyzję”, potem „Zleć ponowny lot”. 40–60 s: w zadaniach kliknij „Importuj LOT-02”. Raport potwierdza utrzymywanie się wody. Dyżurny zapisuje status „Nadal aktualna”. Nie twierdzimy, że droga została otwarta. Jeśli aplikacja jest niedostępna, pokaż zrzut i opowiedz ten sam przypadek jako pokaz statyczny.\nŹródło: dostarczony prototyp NURT, zestaw danych demonstracyjnych.');
+notes('POKAZ OKOŁO 2 MINUT. Uruchom START DEMO i przechodź kolejno przez osiem kroków. W kroku drugim pokaż zadanie LOT-01 dla operatora. W kroku trzecim wskaż czas, lokalizację i źródło materiału z drona. W kroku szóstym pokaż jawny priorytet. W kroku siódmym podkreśl decyzję człowieka. W kroku ósmym pokaż LOT-02 i nowy czas obserwacji.');
 
 start(C.navy);
-tx('Każda obserwacja ma dalszy ciąg',64,48,1152,80,51,C.paper,true);
-tx('Karta zachowuje źródło informacji i wynik sprawdzenia.',64,145,1152,48,29,C.light);
-const q1=node('Obserwacja',80,259,440,104,{fill:'#1B3940',color:C.paper,border:'#496269',size:31});
-const q2=node('Priorytet',756,259,440,104,{fill:'#1B3940',color:C.paper,border:'#496269',size:31});
+tx('Pętla decyzji z udziałem drona',64,48,1152,80,51,C.paper,true);
+tx('LOT-02 aktualizuje sprawę, zanim sztab zacznie pracować na nieaktualnym obrazie.',64,145,1152,48,27,C.light);
+const q1=node('Obserwacja LOT-01',80,259,440,104,{fill:'#1B3940',color:C.paper,border:'#496269',size:29});
+const q2=node('Priorytet NURT',756,259,440,104,{fill:'#1B3940',color:C.paper,border:'#496269',size:29});
 const q3=node('Decyzja człowieka',756,445,440,104,{fill:C.teal,border:C.teal,size:31});
-const q4=node('Ponowna weryfikacja',80,445,440,104,{fill:'#1B3940',color:C.paper,border:'#496269',size:31});
+const q4=node('Weryfikacja LOT-02',80,445,440,104,{fill:'#1B3940',color:C.paper,border:'#496269',size:29});
 arrow(q1,q2);arrow(q2,q3,'bottom','top');arrow(q3,q4,'left','right');arrow(q4,q1,'top','bottom');
 tx('Źródło     Czas     Lokalizacja     Pewność     Status',128,595,1024,45,26,C.light,false,'center');
 footer(6,true);
 notes('Innowacją prototypu jest zamknięty obieg sprawy. Z pojedynczego kadru powstaje śledzona obserwacja. Dyżurny widzi priorytet i podejmuje decyzję. Kolejna obserwacja potwierdza zmianę albo ponawia potrzebę sprawdzenia. Źródło, czas, lokalizacja i niepewność pozostają z kartą. To mechanizm, który ma ograniczyć pracę na starym lub źle zrozumianym obrazie. Jego wpływ trzeba dopiero zmierzyć.\nŹródło: brief, „Innowacja do wyeksponowania”.');
 
 start();
-tx('Wartość operacyjna\ndo sprawdzenia w pilotażu',64,48,1152,146,50,C.navy,true);
+tx('Efekt do zmierzenia w pilotażu',64,48,1152,100,50,C.navy,true);
 tx('CELE PILOTAŻU, DO POMIARU',64,215,1152,31,19,C.muted,true);
-const ms=[['Czas do karty','Od przesłania obserwacji\ndo czytelnej karty działania.','sekundy / minuty'],['Kompletność','Odsetek kart z zapisanym\nźródłem i czasem.','procent kart'],['Czas do decyzji','Od karty do zatwierdzenia\nnastępnego kroku.','minuty'],['Weryfikacja','Odsetek spraw sprawdzonych\nponownie w ustalonym oknie.','procent spraw']];
+const ms=[['Czas od lotu do karty','Od materiału z drona\ndo czytelnej karty działania.','sekundy / minuty'],['Kompletność obserwacji','Odsetek kart z lotem,\nźródłem i czasem.','procent kart'],['Czas do decyzji','Od karty NURT do zatwierdzenia\nnastępnego kroku.','minuty'],['Ponowna obserwacja','Odsetek spraw sprawdzonych\nprzez LOT-02 w ustalonym oknie.','procent spraw']];
 ms.forEach((m,i)=>{const x=i%2?700:64;const y=i<2?286:475;tx(m[0],x,y,510,48,33,C.navy,true);tx(m[1],x,y+58,510,75,25,C.muted);tx(m[2],x,y+137,510,31,19,'#198B7D',true);});
 footer(7,false,'Porównanie z dotychczasową pracą sztabu podczas tego samego ćwiczenia. Brak wyników pilotażu.');
 notes('Nie pokazujemy fikcyjnych wyników. Podczas ćwiczenia porównamy dotychczasową pracę sztabu z tym samym scenariuszem obsługiwanym w NURT. Zmierzymy czas od przekazania obserwacji do karty, kompletność źródła i czasu, czas do decyzji oraz odsetek spraw sprawdzonych ponownie. Progi sukcesu i okno weryfikacji ustalimy z partnerem przed pilotażem. To proponowane wskaźniki, a nie osiągnięty efekt.\nŹródło: brief, „Wartość operacyjna, którą można zmierzyć”.');
 
 start();
-tx('Do zbudowania na istniejących zasobach',64,48,1152,85,46,C.navy,true);
+tx('Dron jest dynamicznym sensorem NURT',64,48,1152,85,46,C.navy,true);
 const a1=node('Dron\ni operator',64,236,250,104,{size:29});
-const a2=node('Import\nobserwacji',401,236,250,104,{fill:C.teal,border:C.teal,size:29});
-const a3=node('Interfejs\nsztabu',738,236,250,104,{fill:C.navy,color:C.paper,border:C.navy,size:29});
+const a2=node('Pakiet\nz lotu',401,236,250,104,{fill:C.teal,border:C.teal,size:29});
+const a3=node('NURT dla\nsztabu',738,236,250,104,{fill:C.navy,color:C.paper,border:C.navy,size:29});
 arrow(a1,a2);arrow(a2,a3);
 tx('Aktualne rozpoznanie miejsca',64,177,610,36,25,C.muted);
 const a4=node('Warstwy kontekstowe',738,416,450,76,{size:28});
 arrow(a4,a3,'top','bottom');
 tx('Planowane źródła:\nGeoportal / GUGiK, IMGW, Copernicus',64,410,630,98,26,C.muted);
 tx('Działa w demo',64,552,430,38,27,C.navy,true);
-tx('Mapa syntetyczna, porównanie lotów,\npriorytety, decyzja i LOT-02.',64,597,575,64,23,C.muted);
+tx('Podkład satelitarny, syntetyczny scenariusz,\nporównanie LOT-01 i LOT-02.',64,597,575,64,23,C.muted);
 tx('Następny etap',738,552,450,38,27,C.navy,true);
 tx('Dane z lotu, role użytkowników\ni dobrane warstwy publiczne.',738,597,470,64,23,C.muted);
 footer(8,false,'Dane publiczne są kontekstem. Obserwacja z lotu opisuje stan miejsca w konkretnym czasie.');
 notes('Wykorzystujemy istniejący dron i operatora, bez budowy sprzętu ani własnego modelu AI. Prototyp ma syntetyczną mapę, przygotowany import obserwacji, karty i lokalny zapis decyzji. Źródła publiczne z materiałów wydarzenia to kandydaci do kolejnego etapu, a nie zintegrowane usługi demo. Przed użyciem trzeba wybrać potrzebne warstwy, sprawdzić licencję, dostęp, datę i aktualność. Mapa terenu nie potwierdza bieżącej przejezdności drogi. Nie ma integracji ze służbami ani sterowania dronem.\nŹródła: brief, „Dane kontekstowe” i „Wykonalność”. Baza danych publicznych.pdf, lista źródeł organizatora.');
 
 start();
-tx('Bezpieczne użycie dual-use',64,48,1152,82,51,C.navy,true);
+tx('Bezpieczne użycie drona i NURT',64,48,1152,82,51,C.navy,true);
 tx('Już w demonstracji',64,198,530,46,32,C.navy,true);
-tx('Decyzję zatwierdza człowiek\nŹródło, wiek i pewność informacji\nSyntetyczne dane bez danych osób',64,270,570,146,27,C.muted);
+tx('Dron zbiera obraz, nie podejmuje decyzji\nDyżurny zatwierdza następny krok\nSyntetyczne dane bez danych osób',64,270,570,146,27,C.muted);
 tx('Warunki pilotażu',710,198,500,46,32,C.navy,true);
-tx('Role i ograniczony dostęp\nMinimalizacja danych o osobach\nUprawniony operator i procedury lotu',710,270,505,146,27,C.muted);
+tx('Uprawniony operator odpowiada za lot\nRole, ograniczony dostęp i retencja danych\nWeryfikacja obserwacji przed działaniem',710,270,505,146,27,C.muted);
 const p1=node('Demo',64,503,301,85,{fill:C.navy,color:C.paper,border:C.navy,size:30});
 const p2=node('Ćwiczenie',489,503,301,85,{size:30});
 const p3=node('Pilotaż ze sztabem',914,503,301,85,{fill:C.teal,border:C.teal,size:29});
@@ -160,19 +155,19 @@ notes('Zakres jest ratowniczy, defensywny i organizacyjny. Decyzję podejmuje cz
 
 start(C.navy);
 tx('NURT C2',64,43,1152,110,72,C.paper,true);
-tx('Najpierw rozpoznaj.\nPotem zdecyduj.\nNa końcu potwierdź.',64,202,725,255,57,C.paper,true);
+tx('Dron dostarcza obraz.\nNURT tworzy sprawę.\nCzłowiek decyduje.',64,202,725,255,52,C.paper,true);
 tx('ZESPÓŁ USZATKI',848,205,368,30,21,C.teal,true);
 tx('Daniel Prajsnar\nBartosz Orzechowski\nFabian Drapak\nJan Bysiewicz',848,253,368,151,25,C.paper);
 tx('OTWARTE REPOZYTORIUM',848,433,368,30,18,C.light,true);
-tx('github.com/Bysiu/Nurt',848,478,368,49,24,C.teal,true);
+tx('github.com/Danie11o/Nurt',848,478,368,49,24,C.teal,true);
 tx('Szukamy partnera do ćwiczenia\nz gminnym sztabem.',64,557,1146,85,33,C.teal,true);
 footer(10,true,'Prototyp i materiały przygotowane z pomocą AI (Codex). Efekt operacyjny do pomiaru.');
-notes('NURT porządkuje drogę od rozpoznania do działania, zachowując odpowiedzialność człowieka. Szukamy partnera operacyjnego do ćwiczenia, które zweryfikuje przydatność przepływu i pozwoli zmierzyć jego efekt. Najpierw rozpoznaj. Potem zdecyduj. Na końcu potwierdź.\nZespół: Uszatki. Daniel Prajsnar, Bartosz Orzechowki, Fabian Drapak, Jan Bysiewicz. Przed zgłoszeniem zespół uzupełnia rzeczywisty link do otwartego repozytorium. Placeholder nie jest adresem repozytorium.\nUjawnienie użycia AI: prototyp, dokumentację i prezentację przygotowano z pomocą Codex; syntetyczny obraz scenariusza powstał przy użyciu generatora obrazu OpenAI. Zespół odpowiada za sprawdzenie materiałów i ostateczne zgłoszenie. Źródło wymagania ujawnienia: ogólny regulamin wydarzenia, sekcja IX.\nŹródło koncepcji: brief, plan prezentacji, slajd 10.');
+notes('NURT łączy obserwację z drona z udokumentowaną decyzją człowieka i ponownym sprawdzeniem przez LOT-02. Szukamy partnera operacyjnego do ćwiczenia, które pozwoli zmierzyć przydatność tego przepływu. Repozytorium projektu: https://github.com/Danie11o/Nurt.\nZespół Uszatki: Daniel Prajsnar, Bartosz Orzechowski, Fabian Drapak, Jan Bysiewicz.\nUjawnienie użycia AI: prototyp, dokumentację i prezentację przygotowano z pomocą Codex; syntetyczny obraz scenariusza powstał przy użyciu generatora obrazu OpenAI. Zespół odpowiada za sprawdzenie materiałów i ostateczne zgłoszenie.');
 
 const serializedSpec=JSON.stringify({width:W,height:H,font:FONT,slides:spec.map(({slide,...s})=>s)},null,2);
 await fs.writeFile(path.join(BUILD,'deck-spec.json'),serializedSpec);
 if(process.env.NURT_ALLOW_DRAFT!=='1')await fs.writeFile(path.join(HERE,'deck-spec.json'),serializedSpec);
-await fs.writeFile(path.join(HERE,'speaker-notes.md'),'# NURT - notatki prezentera\n\nPolska prezentacja, 10 slajdów. Czas wystąpienia: [CZAS PREZENTACJI]. Obszar docelowy: [OBSZAR / SCENARIUSZ].\n\n'+spec.map((s,i)=>`## Slajd ${i+1}\n\n${s.notes}\n`).join('\n'));
+await fs.writeFile(path.join(HERE,'speaker-notes.md'),'# NURT C2 — notatki prezentera\n\nPolska prezentacja konkursowa, 10 slajdów. Scenariusz i dane demonstracyjne są syntetyczne.\n\n'+spec.map((s,i)=>`## Slajd ${i+1}\n\n${s.notes}\n`).join('\n'));
 const candidate=path.join(BUILD,'nurt-c2-candidate.pptx');
 await(await PresentationFile.exportPptx(deck)).save(candidate);
 for(let i=0;i<spec.length;i++){
@@ -181,7 +176,7 @@ for(let i=0;i<spec.length;i++){
   const layout=await spec[i].slide.export({format:'layout'});await fs.writeFile(path.join(BUILD,`slide-${i+1}.layout.json`),await layout.text());
 }
 if(process.env.NURT_ALLOW_DRAFT!=='1'){
-  const result=await finalizePresentation({explicitTotalSlideCount:10,requiredNativeTableOwnerSlides:[],requiredNativeChartOwnerSlides:[],workspaceDir:ROOT,candidatePath:candidate,finalPath:path.join(HERE,'NURT-C2-prezentacja.pptx'),pythonExecutable:path.join(RUNTIME,'python/python.exe'),integrityValidatorPath:path.join(SKILL,'container_tools/inspect_presentation_package_integrity.py'),layoutValidatorPath:path.join(SKILL,'container_tools/inspect_presentation_layout_geometry.py'),layoutArgs:['--expected-slide-size-emu','12192000,6858000','--validate-bullet-geometry','--validate-heading-fit'],fontPolicy:{basis:'design',families:[FONT]},verifyArtifactToolImport:true,receiptPath:path.join(BUILD,'nurt-c2.validation.json')});
+  const result=await finalizePresentation({explicitTotalSlideCount:10,requiredNativeTableOwnerSlides:[],requiredNativeChartOwnerSlides:[],workspaceDir:ROOT,candidatePath:candidate,finalPath:path.join(HERE,'NURT-C2-prezentacja-final.pptx'),pythonExecutable:path.join(RUNTIME,'python/python.exe'),integrityValidatorPath:path.join(SKILL,'container_tools/inspect_presentation_package_integrity.py'),layoutValidatorPath:path.join(SKILL,'container_tools/inspect_presentation_layout_geometry.py'),layoutArgs:['--expected-slide-size-emu','12192000,6858000','--validate-bullet-geometry','--validate-heading-fit'],fontPolicy:{basis:'design',families:[FONT]},verifyArtifactToolImport:true,receiptPath:path.join(BUILD,'nurt-c2-final.validation.json')});
   console.log(JSON.stringify(result));
 }
 console.log(`Deck has ${spec.length} slides. Spec: ${path.join(BUILD,'deck-spec.json')}`);

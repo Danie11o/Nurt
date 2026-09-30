@@ -32,12 +32,12 @@
         },
         {
           "kind": "text",
-          "text": "LOT-01 daje decyzję.\nLOT-02 potwierdza jej aktualność.",
+          "text": "Dron dostarcza aktualny obraz.\nNURT prowadzi go do decyzji i weryfikacji.",
           "x": 66,
           "y": 394,
-          "w": 650,
+          "w": 700,
           "h": 96,
-          "size": 30,
+          "size": 28,
           "color": "#B3C6C6",
           "bold": false,
           "align": "left"
@@ -101,47 +101,57 @@
       "items": [
         {
           "kind": "text",
-          "text": "Droga może być zalana.\nDyżurny musi wiedzieć, co dalej.",
+          "text": "Problem operacyjny",
           "x": 64,
           "y": 48,
           "w": 1148,
-          "h": 150,
-          "size": 50,
+          "h": 80,
+          "size": 52,
           "color": "#10272C",
           "bold": true,
           "align": "left"
         },
         {
           "kind": "text",
-          "text": "„Czy dojedziemy\ndo odciętej\nzabudowy?”",
+          "text": "„Czy ratownicy nadal\ndojadą do mieszkańców?”",
           "x": 64,
-          "y": 274,
-          "w": 580,
-          "h": 245,
-          "size": 55,
+          "y": 205,
+          "w": 575,
+          "h": 170,
+          "size": 48,
           "color": "#10272C",
           "bold": true,
           "align": "left"
         },
         {
           "kind": "text",
-          "text": "SYTUACJA DEMONSTRACYJNA",
-          "x": 755,
-          "y": 254,
-          "w": 450,
-          "h": 30,
-          "size": 18,
+          "text": "Dron może szybko sprawdzić teren.\nSam obraz nie wystarcza jednak\ndo bezpiecznej decyzji.",
+          "x": 64,
+          "y": 410,
+          "w": 555,
+          "h": 128,
+          "size": 28,
           "color": "#587078",
-          "bold": true,
+          "bold": false,
           "align": "left"
         },
         {
+          "kind": "line",
+          "x": 682,
+          "y": 180,
+          "x2": 682,
+          "y2": 595,
+          "color": "#CDD8D4",
+          "width": 2,
+          "dashed": false
+        },
+        {
           "kind": "text",
-          "text": "Sygnał ze zgłoszenia",
-          "x": 755,
-          "y": 316,
-          "w": 450,
-          "h": 44,
+          "text": "Obraz bez kontekstu",
+          "x": 742,
+          "y": 190,
+          "w": 470,
+          "h": 43,
           "size": 31,
           "color": "#10272C",
           "bold": true,
@@ -149,43 +159,67 @@
         },
         {
           "kind": "text",
-          "text": "Droga wymaga sprawdzenia.\nInformacja pozostaje niepewna.",
-          "x": 755,
-          "y": 366,
-          "w": 450,
-          "h": 83,
-          "size": 25,
+          "text": "Brakuje jednoznacznego czasu,\nmiejsca i źródła obserwacji.",
+          "x": 742,
+          "y": 239,
+          "w": 470,
+          "h": 62,
+          "size": 23,
           "color": "#587078",
           "bold": false,
           "align": "left"
         },
         {
           "kind": "text",
-          "text": "Dyżurny gminnego sztabu",
-          "x": 755,
-          "y": 487,
-          "w": 450,
-          "h": 44,
-          "size": 29,
+          "text": "Decyzja bez zapisu",
+          "x": 742,
+          "y": 335,
+          "w": 470,
+          "h": 43,
+          "size": 31,
           "color": "#10272C",
           "bold": true,
           "align": "left"
         },
         {
           "kind": "text",
-          "text": "Wybiera odcinek do rozpoznania\ni potrzebuje aktualnego obrazu.",
-          "x": 755,
-          "y": 535,
-          "w": 450,
-          "h": 82,
-          "size": 25,
+          "text": "Nie wiadomo, kto zatwierdził działanie\ni na jakiej podstawie.",
+          "x": 742,
+          "y": 384,
+          "w": 470,
+          "h": 62,
+          "size": 23,
           "color": "#587078",
           "bold": false,
           "align": "left"
         },
         {
           "kind": "text",
-          "text": "NURT",
+          "text": "Brak ponownego sprawdzenia",
+          "x": 742,
+          "y": 480,
+          "w": 470,
+          "h": 43,
+          "size": 31,
+          "color": "#10272C",
+          "bold": true,
+          "align": "left"
+        },
+        {
+          "kind": "text",
+          "text": "Sztab może pracować na obrazie,\nktóry stracił aktualność.",
+          "x": 742,
+          "y": 529,
+          "w": 470,
+          "h": 62,
+          "size": 23,
+          "color": "#587078",
+          "bold": false,
+          "align": "left"
+        },
+        {
+          "kind": "text",
+          "text": "Problem: aktualny obraz z drona nie ma dalszego ciągu w procesie decyzyjnym.",
           "x": 64,
           "y": 668,
           "w": 1090,
@@ -208,14 +242,14 @@
           "align": "right"
         }
       ],
-      "notes": "Bohaterem jest dyżurny gminnego sztabu. Po intensywnych opadach otrzymuje sygnał, że odcinek drogi może być nieprzejezdny i część zabudowy może być odcięta. To realistyczny, ale fikcyjny przypadek. Dyżurny nie potrzebuje kolejnego złożonego panelu GIS. Musi wiedzieć, gdzie skierować rozpoznanie i co zrobić z jego wynikiem. Dokładny obszar zespół dostosuje do zadania wydarzenia.\nŹródło: brief, „Użytkownik i scenariusz demonstracyjny”."
+      "notes": "Problem nie polega na braku kamer. Dron szybko dociera nad trudno dostępne miejsce, ale pojedynczy kadr nie odpowiada jeszcze na pytanie operacyjne. Sztab potrzebuje informacji o czasie, miejscu i źródle. Musi zapisać decyzję i sprawdzić, czy po kilkunastu minutach nadal jest aktualna. Scenariusz i dane w demonstracji są syntetyczne."
     },
     {
       "background": "#10272C",
       "items": [
         {
           "kind": "text",
-          "text": "Sam podgląd nie daje decyzji",
+          "text": "Rozwiązanie NURT C2",
           "x": 64,
           "y": 48,
           "w": 1152,
@@ -227,33 +261,45 @@
         },
         {
           "kind": "text",
-          "text": "Obraz z drona\nZgłoszenie\nMapa terenu",
+          "text": "Dron dostarcza\nświeżą obserwację",
           "x": 64,
-          "y": 224,
-          "w": 600,
-          "h": 248,
-          "size": 51,
+          "y": 187,
+          "w": 520,
+          "h": 94,
+          "size": 36,
+          "color": "#F5F4ED",
+          "bold": true,
+          "align": "left"
+        },
+        {
+          "kind": "text",
+          "text": "LOT-01 sprawdza wskazany odcinek.\nPrzekazuje obraz z czasem\ni lokalizacją.",
+          "x": 64,
+          "y": 300,
+          "w": 520,
+          "h": 105,
+          "size": 25,
           "color": "#B3C6C6",
           "bold": false,
           "align": "left"
         },
         {
           "kind": "line",
-          "x": 688,
-          "y": 204,
-          "x2": 688,
-          "y2": 590,
+          "x": 632,
+          "y": 172,
+          "x2": 632,
+          "y2": 595,
           "color": "#365057",
           "width": 2,
           "dashed": false
         },
         {
           "kind": "text",
-          "text": "Gdzie?",
-          "x": 757,
-          "y": 203,
-          "w": 451,
-          "h": 41,
+          "text": "NURT dodaje kontekst",
+          "x": 700,
+          "y": 175,
+          "w": 500,
+          "h": 42,
           "size": 29,
           "color": "#33B6A5",
           "bold": true,
@@ -261,11 +307,11 @@
         },
         {
           "kind": "text",
-          "text": "Dokładna lokalizacja",
-          "x": 757,
-          "y": 248,
-          "w": 451,
-          "h": 35,
+          "text": "Łączy materiał z lotem, miejscem,\nczasem i oceną pewności.",
+          "x": 700,
+          "y": 224,
+          "w": 500,
+          "h": 72,
           "size": 22,
           "color": "#B3C6C6",
           "bold": false,
@@ -273,11 +319,11 @@
         },
         {
           "kind": "text",
-          "text": "Kiedy?",
-          "x": 757,
-          "y": 302,
-          "w": 451,
-          "h": 41,
+          "text": "NURT tworzy sprawę",
+          "x": 700,
+          "y": 310,
+          "w": 500,
+          "h": 42,
           "size": 29,
           "color": "#33B6A5",
           "bold": true,
@@ -285,11 +331,11 @@
         },
         {
           "kind": "text",
-          "text": "Czas obserwacji",
-          "x": 757,
-          "y": 347,
-          "w": 451,
-          "h": 35,
+          "text": "Pokazuje dowód, zmianę,\npriorytet i status.",
+          "x": 700,
+          "y": 359,
+          "w": 500,
+          "h": 72,
           "size": 22,
           "color": "#B3C6C6",
           "bold": false,
@@ -297,11 +343,11 @@
         },
         {
           "kind": "text",
-          "text": "Z jaką pewnością?",
-          "x": 757,
-          "y": 401,
-          "w": 451,
-          "h": 41,
+          "text": "Człowiek zatwierdza działanie",
+          "x": 700,
+          "y": 445,
+          "w": 500,
+          "h": 42,
           "size": 29,
           "color": "#33B6A5",
           "bold": true,
@@ -309,11 +355,11 @@
         },
         {
           "kind": "text",
-          "text": "Potwierdzenie albo weryfikacja",
-          "x": 757,
-          "y": 446,
-          "w": 451,
-          "h": 35,
+          "text": "Dyżurny podejmuje decyzję.\nLOT-02 ponownie sprawdza sytuację.",
+          "x": 700,
+          "y": 494,
+          "w": 500,
+          "h": 72,
           "size": 22,
           "color": "#B3C6C6",
           "bold": false,
@@ -321,31 +367,19 @@
         },
         {
           "kind": "text",
-          "text": "Co teraz?",
-          "x": 757,
-          "y": 500,
-          "w": 451,
-          "h": 41,
-          "size": 29,
+          "text": "Efekt\nObraz z drona staje się\nudokumentowaną i aktualizowaną\nsprawą operacyjną.",
+          "x": 64,
+          "y": 475,
+          "w": 520,
+          "h": 132,
+          "size": 28,
           "color": "#33B6A5",
           "bold": true,
           "align": "left"
         },
         {
           "kind": "text",
-          "text": "Sprawa do decyzji dyżurnego",
-          "x": 757,
-          "y": 545,
-          "w": 451,
-          "h": 35,
-          "size": 22,
-          "color": "#B3C6C6",
-          "bold": false,
-          "align": "left"
-        },
-        {
-          "kind": "text",
-          "text": "NURT uzupełnia mapę i obraz o uporządkowany zapis sprawy.",
+          "text": "Dron obserwuje. NURT porządkuje. Człowiek decyduje. LOT-02 weryfikuje.",
           "x": 64,
           "y": 668,
           "w": 1090,
@@ -368,300 +402,30 @@
           "align": "right"
         }
       ],
-      "notes": "Nagranie ma wartość operacyjną, gdy właściwa osoba dostaje aktualną i zrozumiałą informację. NURT uzupełnia dotychczasowe narzędzia, porządkując odpowiedzi na cztery pytania: gdzie, kiedy, z jaką pewnością i co dalej. Nie twierdzimy, że istniejące systemy tego nie potrafią. Nasz prototyp koncentruje się na niewielkim przepływie możliwym do pokazania i sprawdzenia z dyżurnym.\nŹródło: brief, „Innowacja do wyeksponowania”."
+      "notes": "NURT nie zastępuje operatora drona ani dyżurnego. Dron pełni rolę dynamicznego sensora. NURT porządkuje obserwację w kartę sprawy i zachowuje jej historię. Człowiek zatwierdza następny krok. Drugi lot aktualizuje status, dzięki czemu sztab nie opiera się wyłącznie na starym obrazie."
     },
     {
-      "background": "#F5F4ED",
+      "background": "#10272C",
       "items": [
         {
-          "kind": "text",
-          "text": "Misja zaczyna się od potrzeby sztabu",
-          "x": 64,
-          "y": 48,
-          "w": 1152,
-          "h": 88,
-          "size": 49,
-          "color": "#10272C",
-          "bold": true,
-          "align": "left"
+          "kind": "image",
+          "src": "assets/nurt-c2-jak-dziala.png",
+          "x": 28,
+          "y": 22,
+          "w": 1224,
+          "h": 688,
+          "crop": null,
+          "fit": "contain"
         },
         {
           "kind": "text",
-          "text": "Dron dostarcza świeżą obserwację trudno dostępnego miejsca.",
-          "x": 64,
-          "y": 153,
-          "w": 1152,
-          "h": 50,
-          "size": 29,
-          "color": "#587078",
-          "bold": false,
-          "align": "left"
-        },
-        {
-          "kind": "rect",
-          "x": 64,
-          "y": 267,
-          "w": 245,
-          "h": 108,
-          "fill": "#F5F4ED",
-          "line": "#CDD8D4",
-          "width": 2
-        },
-        {
-          "kind": "text",
-          "text": "Potrzeba\nsztabu",
-          "x": 84,
-          "y": 285,
-          "w": 205,
-          "h": 80,
-          "size": 26,
-          "color": "#10272C",
-          "bold": true,
-          "align": "left"
-        },
-        {
-          "kind": "rect",
-          "x": 366,
-          "y": 267,
-          "w": 245,
-          "h": 108,
-          "fill": "#F5F4ED",
-          "line": "#CDD8D4",
-          "width": 2
-        },
-        {
-          "kind": "text",
-          "text": "Zadanie lotu\ndla operatora",
-          "x": 386,
-          "y": 285,
-          "w": 205,
-          "h": 80,
-          "size": 26,
-          "color": "#10272C",
-          "bold": true,
-          "align": "left"
-        },
-        {
-          "kind": "rect",
-          "x": 668,
-          "y": 267,
-          "w": 245,
-          "h": 108,
-          "fill": "#33B6A5",
-          "line": "#33B6A5",
-          "width": 2
-        },
-        {
-          "kind": "text",
-          "text": "Dron: obraz\ni lokalizacja",
-          "x": 688,
-          "y": 285,
-          "w": 205,
-          "h": 80,
-          "size": 26,
-          "color": "#10272C",
-          "bold": true,
-          "align": "left"
-        },
-        {
-          "kind": "rect",
-          "x": 970,
-          "y": 267,
-          "w": 245,
-          "h": 108,
-          "fill": "#F5F4ED",
-          "line": "#CDD8D4",
-          "width": 2
-        },
-        {
-          "kind": "text",
-          "text": "Obserwacja",
-          "x": 990,
-          "y": 285,
-          "w": 205,
-          "h": 80,
-          "size": 26,
-          "color": "#10272C",
-          "bold": true,
-          "align": "left"
-        },
-        {
-          "kind": "rect",
-          "x": 970,
-          "y": 466,
-          "w": 245,
-          "h": 108,
-          "fill": "#F5F4ED",
-          "line": "#CDD8D4",
-          "width": 2
-        },
-        {
-          "kind": "text",
-          "text": "Karta\ndziałania",
-          "x": 990,
-          "y": 484,
-          "w": 205,
-          "h": 80,
-          "size": 26,
-          "color": "#10272C",
-          "bold": true,
-          "align": "left"
-        },
-        {
-          "kind": "rect",
-          "x": 668,
-          "y": 466,
-          "w": 245,
-          "h": 108,
-          "fill": "#10272C",
-          "line": "#10272C",
-          "width": 2
-        },
-        {
-          "kind": "text",
-          "text": "Decyzja\ndyżurnego",
-          "x": 688,
-          "y": 484,
-          "w": 205,
-          "h": 80,
-          "size": 26,
-          "color": "#F5F4ED",
-          "bold": true,
-          "align": "left"
-        },
-        {
-          "kind": "rect",
-          "x": 366,
-          "y": 466,
-          "w": 245,
-          "h": 108,
-          "fill": "#F5F4ED",
-          "line": "#CDD8D4",
-          "width": 2
-        },
-        {
-          "kind": "text",
-          "text": "Ponowne\npotwierdzenie",
-          "x": 386,
-          "y": 484,
-          "w": 205,
-          "h": 80,
-          "size": 26,
-          "color": "#10272C",
-          "bold": true,
-          "align": "left"
-        },
-        {
-          "kind": "arrow",
-          "from": [
-            309,
-            321
-          ],
-          "to": [
-            366,
-            321
-          ],
-          "fromSide": "right",
-          "toSide": "left",
-          "color": "#33B6A5",
-          "width": 3
-        },
-        {
-          "kind": "arrow",
-          "from": [
-            611,
-            321
-          ],
-          "to": [
-            668,
-            321
-          ],
-          "fromSide": "right",
-          "toSide": "left",
-          "color": "#33B6A5",
-          "width": 3
-        },
-        {
-          "kind": "arrow",
-          "from": [
-            913,
-            321
-          ],
-          "to": [
-            970,
-            321
-          ],
-          "fromSide": "right",
-          "toSide": "left",
-          "color": "#33B6A5",
-          "width": 3
-        },
-        {
-          "kind": "arrow",
-          "from": [
-            1092.5,
-            375
-          ],
-          "to": [
-            1092.5,
-            466
-          ],
-          "fromSide": "bottom",
-          "toSide": "top",
-          "color": "#33B6A5",
-          "width": 3
-        },
-        {
-          "kind": "arrow",
-          "from": [
-            970,
-            520
-          ],
-          "to": [
-            913,
-            520
-          ],
-          "fromSide": "left",
-          "toSide": "right",
-          "color": "#33B6A5",
-          "width": 3
-        },
-        {
-          "kind": "arrow",
-          "from": [
-            668,
-            520
-          ],
-          "to": [
-            611,
-            520
-          ],
-          "fromSide": "left",
-          "toSide": "right",
-          "color": "#33B6A5",
-          "width": 3
-        },
-        {
-          "kind": "text",
-          "text": "Operator odpowiada za lot.\nCzłowiek zatwierdza działanie.",
-          "x": 64,
-          "y": 478,
-          "w": 270,
-          "h": 89,
-          "size": 22,
-          "color": "#587078",
-          "bold": false,
-          "align": "left"
-        },
-        {
-          "kind": "text",
-          "text": "NURT",
+          "text": "Pełna pętla: potrzeba sztabu, LOT-01, decyzja człowieka i weryfikacja LOT-02.",
           "x": 64,
           "y": 668,
           "w": 1090,
           "h": 25,
           "size": 16,
-          "color": "#587078",
+          "color": "#B3C6C6",
           "bold": false,
           "align": "left"
         },
@@ -673,31 +437,31 @@
           "w": 66,
           "h": 30,
           "size": 18,
-          "color": "#587078",
+          "color": "#B3C6C6",
           "bold": false,
           "align": "right"
         }
       ],
-      "notes": "Sztab zgłasza potrzebę. Uprawniony operator przygotowuje misję i wykonuje lot zgodnie z właściwymi procedurami. Dron dostarcza obraz z lokalizacją. Człowiek opisuje obserwację, a NURT pokazuje kartę. Dyżurny zatwierdza następny krok. Sprawdzenie w terenie albo ponowny lot zamyka obieg. Bez drona brakuje aktualnego rozpoznania trudno dostępnego miejsca. W demonstracji importujemy przygotowany scenariusz. Nie sterujemy sprzętem i nie wysyłamy rozkazów służbom.\nŹródło: brief, „Pętla dronowa”, „Innowacja do wyeksponowania”."
+      "notes": "Proces zaczyna pytanie sztabu. Operator wykonuje LOT-01, a dron dostarcza aktualny obraz z lokalizacją. NURT tworzy kartę sprawy z dowodem, zmianą i priorytetem. Dyżurny zatwierdza działanie. LOT-02 ponownie obserwuje ten sam odcinek i aktualizuje status. Demo nie steruje dronem ani nie wysyła poleceń do służb."
     },
     {
       "background": "#10272C",
       "items": [
         {
           "kind": "text",
-          "text": "Zobacz NURT C2 w 60 sekund",
+          "text": "Demo prowadzi sprawę przez 8 kroków",
           "x": 64,
           "y": 33,
           "w": 1152,
           "h": 70,
-          "size": 49,
+          "size": 48,
           "color": "#F5F4ED",
           "bold": true,
           "align": "left"
         },
         {
           "kind": "text",
-          "text": "Działające demo. Jawny priorytet, decyzja człowieka i LOT-02.",
+          "text": "Od zadania dla drona, przez decyzję dyżurnego, do ponownej obserwacji LOT-02.",
           "x": 64,
           "y": 112,
           "w": 1152,
@@ -709,7 +473,7 @@
         },
         {
           "kind": "image",
-          "src": "assets/nurt-overview.png",
+          "src": "assets/nurt-current-demo.png",
           "x": 62,
           "y": 171,
           "w": 1156,
@@ -742,14 +506,14 @@
           "align": "right"
         }
       ],
-      "notes": "POKAZ 60 SEKUND. 0–10 s: wybierz OBS-01 „Woda na dojeździe do mostu”, Most Zachodni, sektor B2. Powiedz, że dane i obszar są syntetyczne. 10–25 s: wskaż źródło, czas i pewność. Potwierdzona obserwacja wody nie jest potwierdzeniem bezpieczeństwa drogi. 25–40 s: wpisz decyzję i kliknij „Zapisz decyzję”, potem „Zleć ponowny lot”. 40–60 s: w zadaniach kliknij „Importuj LOT-02”. Raport potwierdza utrzymywanie się wody. Dyżurny zapisuje status „Nadal aktualna”. Nie twierdzimy, że droga została otwarta. Jeśli aplikacja jest niedostępna, pokaż zrzut i opowiedz ten sam przypadek jako pokaz statyczny.\nŹródło: dostarczony prototyp NURT, zestaw danych demonstracyjnych."
+      "notes": "POKAZ OKOŁO 2 MINUT. Uruchom START DEMO i przechodź kolejno przez osiem kroków. W kroku drugim pokaż zadanie LOT-01 dla operatora. W kroku trzecim wskaż czas, lokalizację i źródło materiału z drona. W kroku szóstym pokaż jawny priorytet. W kroku siódmym podkreśl decyzję człowieka. W kroku ósmym pokaż LOT-02 i nowy czas obserwacji."
     },
     {
       "background": "#10272C",
       "items": [
         {
           "kind": "text",
-          "text": "Każda obserwacja ma dalszy ciąg",
+          "text": "Pętla decyzji z udziałem drona",
           "x": 64,
           "y": 48,
           "w": 1152,
@@ -761,12 +525,12 @@
         },
         {
           "kind": "text",
-          "text": "Karta zachowuje źródło informacji i wynik sprawdzenia.",
+          "text": "LOT-02 aktualizuje sprawę, zanim sztab zacznie pracować na nieaktualnym obrazie.",
           "x": 64,
           "y": 145,
           "w": 1152,
           "h": 48,
-          "size": 29,
+          "size": 27,
           "color": "#B3C6C6",
           "bold": false,
           "align": "left"
@@ -783,12 +547,12 @@
         },
         {
           "kind": "text",
-          "text": "Obserwacja",
+          "text": "Obserwacja LOT-01",
           "x": 100,
           "y": 277,
           "w": 400,
           "h": 76,
-          "size": 31,
+          "size": 29,
           "color": "#F5F4ED",
           "bold": true,
           "align": "left"
@@ -805,12 +569,12 @@
         },
         {
           "kind": "text",
-          "text": "Priorytet",
+          "text": "Priorytet NURT",
           "x": 776,
           "y": 277,
           "w": 400,
           "h": 76,
-          "size": 31,
+          "size": 29,
           "color": "#F5F4ED",
           "bold": true,
           "align": "left"
@@ -849,12 +613,12 @@
         },
         {
           "kind": "text",
-          "text": "Ponowna weryfikacja",
+          "text": "Weryfikacja LOT-02",
           "x": 100,
           "y": 463,
           "w": 400,
           "h": 76,
-          "size": 31,
+          "size": 29,
           "color": "#F5F4ED",
           "bold": true,
           "align": "left"
@@ -963,11 +727,11 @@
       "items": [
         {
           "kind": "text",
-          "text": "Wartość operacyjna\ndo sprawdzenia w pilotażu",
+          "text": "Efekt do zmierzenia w pilotażu",
           "x": 64,
           "y": 48,
           "w": 1152,
-          "h": 146,
+          "h": 100,
           "size": 50,
           "color": "#10272C",
           "bold": true,
@@ -987,7 +751,7 @@
         },
         {
           "kind": "text",
-          "text": "Czas do karty",
+          "text": "Czas od lotu do karty",
           "x": 64,
           "y": 286,
           "w": 510,
@@ -999,7 +763,7 @@
         },
         {
           "kind": "text",
-          "text": "Od przesłania obserwacji\ndo czytelnej karty działania.",
+          "text": "Od materiału z drona\ndo czytelnej karty działania.",
           "x": 64,
           "y": 344,
           "w": 510,
@@ -1023,7 +787,7 @@
         },
         {
           "kind": "text",
-          "text": "Kompletność",
+          "text": "Kompletność obserwacji",
           "x": 700,
           "y": 286,
           "w": 510,
@@ -1035,7 +799,7 @@
         },
         {
           "kind": "text",
-          "text": "Odsetek kart z zapisanym\nźródłem i czasem.",
+          "text": "Odsetek kart z lotem,\nźródłem i czasem.",
           "x": 700,
           "y": 344,
           "w": 510,
@@ -1071,7 +835,7 @@
         },
         {
           "kind": "text",
-          "text": "Od karty do zatwierdzenia\nnastępnego kroku.",
+          "text": "Od karty NURT do zatwierdzenia\nnastępnego kroku.",
           "x": 64,
           "y": 533,
           "w": 510,
@@ -1095,7 +859,7 @@
         },
         {
           "kind": "text",
-          "text": "Weryfikacja",
+          "text": "Ponowna obserwacja",
           "x": 700,
           "y": 475,
           "w": 510,
@@ -1107,7 +871,7 @@
         },
         {
           "kind": "text",
-          "text": "Odsetek spraw sprawdzonych\nponownie w ustalonym oknie.",
+          "text": "Odsetek spraw sprawdzonych\nprzez LOT-02 w ustalonym oknie.",
           "x": 700,
           "y": 533,
           "w": 510,
@@ -1161,7 +925,7 @@
       "items": [
         {
           "kind": "text",
-          "text": "Do zbudowania na istniejących zasobach",
+          "text": "Dron jest dynamicznym sensorem NURT",
           "x": 64,
           "y": 48,
           "w": 1152,
@@ -1205,7 +969,7 @@
         },
         {
           "kind": "text",
-          "text": "Import\nobserwacji",
+          "text": "Pakiet\nz lotu",
           "x": 421,
           "y": 254,
           "w": 210,
@@ -1227,7 +991,7 @@
         },
         {
           "kind": "text",
-          "text": "Interfejs\nsztabu",
+          "text": "NURT dla\nsztabu",
           "x": 758,
           "y": 254,
           "w": 210,
@@ -1342,7 +1106,7 @@
         },
         {
           "kind": "text",
-          "text": "Mapa syntetyczna, porównanie lotów,\npriorytety, decyzja i LOT-02.",
+          "text": "Podkład satelitarny, syntetyczny scenariusz,\nporównanie LOT-01 i LOT-02.",
           "x": 64,
           "y": 597,
           "w": 575,
@@ -1408,7 +1172,7 @@
       "items": [
         {
           "kind": "text",
-          "text": "Bezpieczne użycie dual-use",
+          "text": "Bezpieczne użycie drona i NURT",
           "x": 64,
           "y": 48,
           "w": 1152,
@@ -1432,7 +1196,7 @@
         },
         {
           "kind": "text",
-          "text": "Decyzję zatwierdza człowiek\nŹródło, wiek i pewność informacji\nSyntetyczne dane bez danych osób",
+          "text": "Dron zbiera obraz, nie podejmuje decyzji\nDyżurny zatwierdza następny krok\nSyntetyczne dane bez danych osób",
           "x": 64,
           "y": 270,
           "w": 570,
@@ -1456,7 +1220,7 @@
         },
         {
           "kind": "text",
-          "text": "Role i ograniczony dostęp\nMinimalizacja danych o osobach\nUprawniony operator i procedury lotu",
+          "text": "Uprawniony operator odpowiada za lot\nRole, ograniczony dostęp i retencja danych\nWeryfikacja obserwacji przed działaniem",
           "x": 710,
           "y": 270,
           "w": 505,
@@ -1606,12 +1370,12 @@
         },
         {
           "kind": "text",
-          "text": "Najpierw rozpoznaj.\nPotem zdecyduj.\nNa końcu potwierdź.",
+          "text": "Dron dostarcza obraz.\nNURT tworzy sprawę.\nCzłowiek decyduje.",
           "x": 64,
           "y": 202,
           "w": 725,
           "h": 255,
-          "size": 57,
+          "size": 52,
           "color": "#F5F4ED",
           "bold": true,
           "align": "left"
@@ -1654,7 +1418,7 @@
         },
         {
           "kind": "text",
-          "text": "github.com/Bysiu/Nurt",
+          "text": "github.com/Danie11o/Nurt",
           "x": 848,
           "y": 478,
           "w": 368,
@@ -1701,7 +1465,7 @@
           "align": "right"
         }
       ],
-      "notes": "NURT porządkuje drogę od rozpoznania do działania, zachowując odpowiedzialność człowieka. Szukamy partnera operacyjnego do ćwiczenia, które zweryfikuje przydatność przepływu i pozwoli zmierzyć jego efekt. Najpierw rozpoznaj. Potem zdecyduj. Na końcu potwierdź.\nZespół: Uszatki. Daniel Prajsnar, Bartosz Orzechowki, Fabian Drapak, Jan Bysiewicz. Przed zgłoszeniem zespół uzupełnia rzeczywisty link do otwartego repozytorium. Placeholder nie jest adresem repozytorium.\nUjawnienie użycia AI: prototyp, dokumentację i prezentację przygotowano z pomocą Codex; syntetyczny obraz scenariusza powstał przy użyciu generatora obrazu OpenAI. Zespół odpowiada za sprawdzenie materiałów i ostateczne zgłoszenie. Źródło wymagania ujawnienia: ogólny regulamin wydarzenia, sekcja IX.\nŹródło koncepcji: brief, plan prezentacji, slajd 10."
+      "notes": "NURT łączy obserwację z drona z udokumentowaną decyzją człowieka i ponownym sprawdzeniem przez LOT-02. Szukamy partnera operacyjnego do ćwiczenia, które pozwoli zmierzyć przydatność tego przepływu. Repozytorium projektu: https://github.com/Danie11o/Nurt.\nZespół Uszatki: Daniel Prajsnar, Bartosz Orzechowski, Fabian Drapak, Jan Bysiewicz.\nUjawnienie użycia AI: prototyp, dokumentację i prezentację przygotowano z pomocą Codex; syntetyczny obraz scenariusza powstał przy użyciu generatora obrazu OpenAI. Zespół odpowiada za sprawdzenie materiałów i ostateczne zgłoszenie."
     }
   ]
 }

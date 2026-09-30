@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Local QA and generated preview files
+artifacts/
+tmp/
+presentation/NURT-C2-prezentacja-v2.pptx

@@ -1,6 +1,6 @@
-# NURT - notatki prezentera
+# NURT C2 — notatki prezentera
 
-Polska prezentacja, 10 slajdów. Czas wystąpienia: [CZAS PREZENTACJI]. Obszar docelowy: [OBSZAR / SCENARIUSZ].
+Polska prezentacja konkursowa, 10 slajdów. Scenariusz i dane demonstracyjne są syntetyczne.
 
 ## Slajd 1
 
@@ -9,23 +9,19 @@ Podczas powodzi problemem nie jest tylko brak obrazu. Sztab musi ustalić, któr
 
 ## Slajd 2
 
-Bohaterem jest dyżurny gminnego sztabu. Po intensywnych opadach otrzymuje sygnał, że odcinek drogi może być nieprzejezdny i część zabudowy może być odcięta. To realistyczny, ale fikcyjny przypadek. Dyżurny nie potrzebuje kolejnego złożonego panelu GIS. Musi wiedzieć, gdzie skierować rozpoznanie i co zrobić z jego wynikiem. Dokładny obszar zespół dostosuje do zadania wydarzenia.
-Źródło: brief, „Użytkownik i scenariusz demonstracyjny”.
+Problem nie polega na braku kamer. Dron szybko dociera nad trudno dostępne miejsce, ale pojedynczy kadr nie odpowiada jeszcze na pytanie operacyjne. Sztab potrzebuje informacji o czasie, miejscu i źródle. Musi zapisać decyzję i sprawdzić, czy po kilkunastu minutach nadal jest aktualna. Scenariusz i dane w demonstracji są syntetyczne.
 
 ## Slajd 3
 
-Nagranie ma wartość operacyjną, gdy właściwa osoba dostaje aktualną i zrozumiałą informację. NURT uzupełnia dotychczasowe narzędzia, porządkując odpowiedzi na cztery pytania: gdzie, kiedy, z jaką pewnością i co dalej. Nie twierdzimy, że istniejące systemy tego nie potrafią. Nasz prototyp koncentruje się na niewielkim przepływie możliwym do pokazania i sprawdzenia z dyżurnym.
-Źródło: brief, „Innowacja do wyeksponowania”.
+NURT nie zastępuje operatora drona ani dyżurnego. Dron pełni rolę dynamicznego sensora. NURT porządkuje obserwację w kartę sprawy i zachowuje jej historię. Człowiek zatwierdza następny krok. Drugi lot aktualizuje status, dzięki czemu sztab nie opiera się wyłącznie na starym obrazie.
 
 ## Slajd 4
 
-Sztab zgłasza potrzebę. Uprawniony operator przygotowuje misję i wykonuje lot zgodnie z właściwymi procedurami. Dron dostarcza obraz z lokalizacją. Człowiek opisuje obserwację, a NURT pokazuje kartę. Dyżurny zatwierdza następny krok. Sprawdzenie w terenie albo ponowny lot zamyka obieg. Bez drona brakuje aktualnego rozpoznania trudno dostępnego miejsca. W demonstracji importujemy przygotowany scenariusz. Nie sterujemy sprzętem i nie wysyłamy rozkazów służbom.
-Źródło: brief, „Pętla dronowa”, „Innowacja do wyeksponowania”.
+Proces zaczyna pytanie sztabu. Operator wykonuje LOT-01, a dron dostarcza aktualny obraz z lokalizacją. NURT tworzy kartę sprawy z dowodem, zmianą i priorytetem. Dyżurny zatwierdza działanie. LOT-02 ponownie obserwuje ten sam odcinek i aktualizuje status. Demo nie steruje dronem ani nie wysyła poleceń do służb.
 
 ## Slajd 5
 
-POKAZ 60 SEKUND. 0–10 s: wybierz OBS-01 „Woda na dojeździe do mostu”, Most Zachodni, sektor B2. Powiedz, że dane i obszar są syntetyczne. 10–25 s: wskaż źródło, czas i pewność. Potwierdzona obserwacja wody nie jest potwierdzeniem bezpieczeństwa drogi. 25–40 s: wpisz decyzję i kliknij „Zapisz decyzję”, potem „Zleć ponowny lot”. 40–60 s: w zadaniach kliknij „Importuj LOT-02”. Raport potwierdza utrzymywanie się wody. Dyżurny zapisuje status „Nadal aktualna”. Nie twierdzimy, że droga została otwarta. Jeśli aplikacja jest niedostępna, pokaż zrzut i opowiedz ten sam przypadek jako pokaz statyczny.
-Źródło: dostarczony prototyp NURT, zestaw danych demonstracyjnych.
+POKAZ OKOŁO 2 MINUT. Uruchom START DEMO i przechodź kolejno przez osiem kroków. W kroku drugim pokaż zadanie LOT-01 dla operatora. W kroku trzecim wskaż czas, lokalizację i źródło materiału z drona. W kroku szóstym pokaż jawny priorytet. W kroku siódmym podkreśl decyzję człowieka. W kroku ósmym pokaż LOT-02 i nowy czas obserwacji.
 
 ## Slajd 6
 
@@ -49,7 +45,6 @@ Zakres jest ratowniczy, defensywny i organizacyjny. Decyzję podejmuje człowiek
 
 ## Slajd 10
 
-NURT porządkuje drogę od rozpoznania do działania, zachowując odpowiedzialność człowieka. Szukamy partnera operacyjnego do ćwiczenia, które zweryfikuje przydatność przepływu i pozwoli zmierzyć jego efekt. Najpierw rozpoznaj. Potem zdecyduj. Na końcu potwierdź.
-Zespół: Uszatki. Daniel Prajsnar, Bartosz Orzechowki, Fabian Drapak, Jan Bysiewicz. Przed zgłoszeniem zespół uzupełnia rzeczywisty link do otwartego repozytorium. Placeholder nie jest adresem repozytorium.
-Ujawnienie użycia AI: prototyp, dokumentację i prezentację przygotowano z pomocą Codex; syntetyczny obraz scenariusza powstał przy użyciu generatora obrazu OpenAI. Zespół odpowiada za sprawdzenie materiałów i ostateczne zgłoszenie. Źródło wymagania ujawnienia: ogólny regulamin wydarzenia, sekcja IX.
-Źródło koncepcji: brief, plan prezentacji, slajd 10.
+NURT łączy obserwację z drona z udokumentowaną decyzją człowieka i ponownym sprawdzeniem przez LOT-02. Szukamy partnera operacyjnego do ćwiczenia, które pozwoli zmierzyć przydatność tego przepływu. Repozytorium projektu: https://github.com/Danie11o/Nurt.
+Zespół Uszatki: Daniel Prajsnar, Bartosz Orzechowski, Fabian Drapak, Jan Bysiewicz.
+Ujawnienie użycia AI: prototyp, dokumentację i prezentację przygotowano z pomocą Codex; syntetyczny obraz scenariusza powstał przy użyciu generatora obrazu OpenAI. Zespół odpowiada za sprawdzenie materiałów i ostateczne zgłoszenie.
